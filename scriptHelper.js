@@ -33,9 +33,9 @@ function formSubmission(document, list, pilotValue, copilotValue, fuelLevelValue
         window.alert("All fields are required")
     }
 
-    // if (isNaN(fuelLevelValue) || isNan(cargoMassValue)) {
-    //     window.alert("Must enter a valid input")
-    // }
+    if (validateInput(fuelLevelValue) === "Not a number" || validateInput(cargoMassValue) === "Not a number") {
+        window.alert("Must enter a valid input")
+    }
 
     list.style.visibility = 'visible';
     
