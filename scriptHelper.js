@@ -17,12 +17,12 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 }
 
 function validateInput(testInput) {
-    if (testInput === " ") {
+    if (testInput === "") {
         return "Empty";
     }   else if (isNaN(testInput)) {
-        return "Not a number";
+        return "Not a Number";
     }   else {
-        return "Is a number";
+        return "Is a Number";
     }
 }
 
@@ -37,13 +37,15 @@ function formSubmission(document, list, pilotValue, copilotValue, fuelLevelValue
         window.alert("Must enter a valid input")
     }
 
-    list.style.visibility = 'visible';
+    list.style.visibility = 'hidden'; //'visible';
     
     let pilotStatus = document.getElementById("pilotStatus");
     pilotStatus.innerHTML = `Pilot ${pilotValue} is ready for launch`;
     let copilotStatus = document.getElementById("copilotStatus");
-    copilotStatus.innerHTML = `CoPilot ${copilotValue} is ready for launch`;
+    copilotStatus.innerHTML = `Co-pilot ${copilotValue} is ready for launch`;
     let launchStatus = document.getElementById("launchStatus");
+    let fuelStatus = document.getElementById("fuelStatus");
+    let cargoStatus = document.getElementById("cargoStatus");
 
     if (fuelLevelValue < 10000) {
         launchStatus.innerHTML = "Shuttle not ready for launch";
@@ -53,12 +55,12 @@ function formSubmission(document, list, pilotValue, copilotValue, fuelLevelValue
 
     if (cargoMassValue > 10000) {
         launchStatus.innerHTML = "Shuttle not ready for launch";
-        launchStatus.style.color = "red";
+        launchStatus.style.color = 'rgb(65, 159, 106)';
         cargoStatus.innerHTML = "Cargo level too high for launch";
     }  
     
     if (fuelLevelValue > 10000 && cargoMassValue < 10000) {
-         launchStatus.innerText = "Shuttle is Ready for Launch"; 
+         launchStatus.innerHTML = "Shuttle is Ready for Launch"; 
          launchStatus.style.color = "green";  
     }
 
