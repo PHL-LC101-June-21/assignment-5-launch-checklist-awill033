@@ -36,8 +36,6 @@ function formSubmission(document, list, pilotValue, copilotValue, fuelLevelValue
     let launchStatus = document.getElementById("launchStatus");
     let fuelStatus = document.getElementById("fuelStatus");
     let cargoStatus = document.getElementById("cargoStatus");
-    if (fuelLevelValue < 10000) {
-        launchStatus.innerHTML = "Shuttle not ready for launch";
    
    
     if (validateInput(pilotValue) === 'Empty' || validateInput(copilotValue) === 'Empty' 
