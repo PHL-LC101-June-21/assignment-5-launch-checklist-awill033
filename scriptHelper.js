@@ -45,7 +45,7 @@ function formSubmission(document, list, pilotValue, copilotValue, fuelLevelValue
         launchStatus.innerHTML = "Awaiting Information Before Launch";
         list.style.visibility = "hidden";
     }
-        else if (typeof validateInput(pilotValue) != 'string' || typeof validateInput(copilotValue) != "string" ||validateInput(fuelLevelValue) != "Is a Number" || validateInput(cargoMassValue) != "Is a Number") {
+        else if (validateInput(pilotValue) == "Is a Number" || validateInput(copilotValue) == "Is a Number" ||validateInput(fuelLevelValue) != "Is a Number" || validateInput(cargoMassValue) != "Is a Number") {
         window.alert("Must enter a valid input")
         launchStatus.innerHTML = "Awaiting Information Before Launch";
         list.style.visibility = "hidden";
